@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
+using UnityEngine.Events;
 public class CharacterController : MonoBehaviour
 { 
     [SerializeField] private SpawnerPlatforms spawner;
@@ -18,6 +18,8 @@ public class CharacterController : MonoBehaviour
     private float acceleration;
 
     Rigidbody rb;
+
+    private UnityEvent OnLanded = new UnityEvent();
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,7 @@ public class CharacterController : MonoBehaviour
 
         MapEvent.OnPlayerDied.AddListener(OnDie);
         MapEvent.OnIncreasePace.AddListener(OnIncreasePace);
+        OnLanded.AddListener(FindObjectOfType<LandingCounter>().OnLanded);
     }
     private void Update()
     {
@@ -53,6 +56,7 @@ public class CharacterController : MonoBehaviour
         Platform platform = spawner.GetNextPlatform();
         distanse = platform.transform.position.z - transform.position.z;
         coveredDistanse = 0;
+        OnLanded.Invoke();
     }
     public void OnDie()
     {

@@ -67,6 +67,8 @@
     <Compile Include="Assets\Scripts\Platform\StaticPlatform.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\SwipeHandler.cs" />
+    <Compile Include="Assets\Scripts\LobbyManager.cs" />
+    <Compile Include="Assets\Scripts\LandingCounter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

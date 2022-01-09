@@ -14,6 +14,7 @@ public class SwipeHandler : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
     public void OnPointerDown(PointerEventData eventData)
     {
         MapEvent.SendGameContinued();
+        controllerOnScreen = (eventData.position.x / Screen.width - 0.5f) * 2;
     }
 
     public void OnPointerUp(PointerEventData eventData)

@@ -16,6 +16,10 @@ public class DefeateMeny : MonoBehaviour
     }
     public void Restart()
     {
+        SceneManager.LoadScene(1);
+    }
+    public void BackToMeny()
+    {
         SceneManager.LoadScene(0);
     }
 }
