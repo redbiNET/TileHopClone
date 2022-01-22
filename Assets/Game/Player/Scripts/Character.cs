@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 
-public class CharacterController : MonoBehaviour
+public class Character : MonoBehaviour
 { 
     [SerializeField] private SpawnerPlatforms _spawner;
     [SerializeField] private AnimationCurve _jumpCurve;
